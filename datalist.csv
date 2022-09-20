@@ -1,11 +1,2 @@
-﻿view_0,3d_model
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
-2D_projection_1.jpg,3D_CT.bin
+﻿3d_model, view_0
+3D_CT.bin, 2D_projection_1.jpg
