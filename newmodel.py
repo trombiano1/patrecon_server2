@@ -45,7 +45,14 @@ class loaderArgs:
 
 train_loader, val_loader = get_train_val_data_loaders(train_file='datalist.csv', val_file="", args=loaderArgs)
 
-newTrainer.train_epoch(train_loader, 0)
+for i in range (0, 10):
+    print(i)
+    newTrainer.train_epoch(train_loader, i)
+
+curr_val_loss = newTrainer.validate(train_loader)
+
+newTrainer.save(curr_val_loss, 10)
+
 
 # exp=1,
 # arch='ReconNet',

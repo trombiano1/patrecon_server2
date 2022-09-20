@@ -6,7 +6,6 @@ import time
 import random
 import numpy as np
 import torch
-torch.cuda.is_available = lambda : False
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 import torch.nn as nn
 import torch.nn.parallel
@@ -26,6 +25,7 @@ from skimage.measure import compare_mse, compare_nrmse, compare_psnr, compare_ss
 from skimage import io
 from PIL import Image
 import matplotlib.pyplot as plt
+
 plt.switch_backend('agg')
 
 
@@ -125,10 +125,11 @@ def main():
         pin_memory=True)
 
     # load model 
-    ckpt_file = os.path.join(exp_path, 'model/model.pth.tar')
+    ckpt_file = os.path.join(exp_path, 'model/best_model.pth.tar')
     if os.path.isfile(ckpt_file):
         print("=> loading checkpoint '{}' ".format(ckpt_file))
-        checkpoint = torch.load(ckpt_file, map_location='cpu')
+        # checkpoint = torch.load(ckpt_file, map_location='cpu')
+        checkpoint = torch.load(ckpt_file)
         best_loss = checkpoint['best_loss']
         model.load_state_dict(checkpoint['state_dict'])
         print("=> loaded checkpoint '{}' ".format(ckpt_file))

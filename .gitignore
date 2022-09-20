@@ -1,3 +1,5 @@
 exp/result/*/**/Plane*.png
+exp/model/*.tar
 **/*.bin
 **/*.pth.tar
+env/
