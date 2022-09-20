@@ -14,7 +14,7 @@ for i in range (1, 201):
     if i % 4 != 0:
         continue
 
-    filename = 'ct_no_tumor_phantom/001/1-001-0%s.img' % f'{i:03}'
+    filename = 'ct_no_tumor_phantom_raw/001/1-001-0%s.img' % f'{i:03}'
 
     with open(filename, 'rb') as f: 
         # Seek backwards from end of file by 2 bytes per pixel 
@@ -22,8 +22,7 @@ for i in range (1, 201):
         img = np.fromfile(f, dtype=np.uint16).reshape((h,w)) 
 
     img = Image.fromarray(img)
-    img = img.convert("F")
-    img = img.resize((128,128), Image.ANTIALIAS)
+    
     if len(result) < 46:
         result.append(np.array(img))
 
