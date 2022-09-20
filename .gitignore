@@ -1,5 +1,6 @@
+.DS_Store
 exp/result/*/**/Plane*.png
 exp/model/*.tar
-**/*.bin
 **/*.pth.tar
+**/*.img
 env/
