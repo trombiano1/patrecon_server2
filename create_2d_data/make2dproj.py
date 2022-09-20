@@ -20,4 +20,4 @@ for i in range (1, 200):
         img = np.fromfile(f, dtype=np.uint16).reshape((h,w))
     # print(max(np.ravel(np.array(img))))
     # Image.fromarray(img).save('result.png')
-    Image.fromarray((img>>4).astype(np.uint8)).save('x_no_tumor_phantom_2d_proj/2D_projection_%s.jpg' % int(i/10)) 
+    Image.fromarray((img>>4).astype(np.uint8)).save('x_no_tumor_phantom_2d_proj/2D_projection_%s.jpg' % (int(i/10) - 1)) 
